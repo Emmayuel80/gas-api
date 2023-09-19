@@ -5,9 +5,10 @@ Prices.getByStationId = (id) => {
   return new Promise(async (resolve, reject) => {
     try {
       const conn = await db.getConnection();
-      const rows = await conn.query("SELECT * FROM prices WHERE cre_id = ?", [
-        id,
-      ]);
+      const rows = await conn.query(
+        "SELECT * FROM prices WHERE cre_id = ? ORDER BY date ASC",
+        [id]
+      );
       conn.end();
       resolve(rows);
     } catch (err) {
