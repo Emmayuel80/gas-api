@@ -27,6 +27,6 @@ app.use((err, _req, res, _next) => {
 
 app.use(require("./routes"));
 
-server.listen(8085, async () => {
+server.listen(8080, async () => {
   console.log("Server running on http://localhost:8080/");
 });
