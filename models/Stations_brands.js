@@ -6,7 +6,7 @@ Stations_brands.getByStationId = (id) => {
     try {
       const conn = await db.getConnection();
       const rows = await conn.query(
-        `SELECT stations_brands.id, brands.name 
+        `SELECT  brands.name 
         FROM stations_brands 
         INNER JOIN brands ON stations_brands.id_brand = brands.id 
         WHERE cre_id = ?`,
